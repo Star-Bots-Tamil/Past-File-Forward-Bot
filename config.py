@@ -10,7 +10,7 @@ class Config:
     API_ID = int(os.environ.get("API_ID", "11973721"))
     API_HASH = os.environ.get("API_HASH", "5264bf4663e9159565603522f58d3c18")
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "6084923439:AAEZxSVGRP0muae7vE1xq1PBXWFCYa6Yhq8") 
-    BOT_SESSION = os.environ.get("BOT_SESSION", "bot") 
+    BOT_SESSION = os.environ.get("BOT_SESSION", "past-file-forward-bot") 
     CAPTION = os.environ.get("CAPTION", "<b>{file_name}</b>")
     FROM_CHANNEL = os.environ.get("FROM_CHANNEL", None)
     FILTER_TYPE = os.environ.get("FILTER_TYPE", "document")
