@@ -15,10 +15,10 @@ More details /help</b>"""
 
 <b><u>Available Command</b></u>
 
-* /start - <b>Bot Alive</b>
+<b>* /start - <b>Bot Alive</b>
 * /help - <b>more help</b>
-* /run - <b>start forward</b>
-* /about - <b>About Me</b>"""
+* /forward - <b>start forward</b>
+* /about - About Me</b>"""
   ABOUT_TXT = """<b><u>My Info</b></u>
 
 <b>Name :</b> <code>Auto Forward Bot</code>
