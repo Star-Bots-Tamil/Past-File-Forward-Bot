@@ -17,7 +17,7 @@ class Config:
     OWNER_ID = os.environ.get("OWNER_ID", "1391556668")
     LIMIT = int(os.environ.get("LIMIT", "1000000000000"))
     SKIP_NO = int(os.environ.get("SKIP_NO", "0"))
-    SESSION = os.environ.get("SESSION", "")
+    SESSION = os.environ.get("SESSION", "+919095030397")
     TO_CHANNEL = int(os.environ.get("TO_CHANNEL", "-1001849017994"))
 def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
