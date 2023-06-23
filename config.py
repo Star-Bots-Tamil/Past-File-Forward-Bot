@@ -12,7 +12,6 @@ class Config:
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "6084923439:AAEZxSVGRP0muae7vE1xq1PBXWFCYa6Yhq8") 
     BOT_SESSION = os.environ.get("BOT_SESSION", "past-file-forward-bot")
     USER_SESSION = os.environ.get("USER_SESSION", "past-file-forward-user")
-    CAPTION = os.environ.get("CAPTION", "<b>{file_name}</b>")
     FROM_CHANNEL = os.environ.get("FROM_CHANNEL", "")
     FILTER_TYPE = os.environ.get("FILTER_TYPE", "document")
     OWNER_ID = os.environ.get("OWNER_ID", "1391556668")
