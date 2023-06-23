@@ -43,7 +43,7 @@ async def run(bot, message):
                 from_chat_id=FROM,
                 parse_mode=enums.ParseMode.HTML,       
                 caption=Translation.CAPTION.format(file_name),
-                message_id=message.message_id
+                message_id=message.id
             )
             files_count += 1
             await asyncio.sleep(1)
@@ -54,7 +54,7 @@ async def run(bot, message):
                 from_chat_id=FROM,
                 parse_mode=enums.ParseMode.HTML,       
                 caption=Translation.CAPTION.format(file_name),
-                message_id=message.message_id
+                message_id=message.id
             )
             files_count += 1
             await asyncio.sleep(1)
