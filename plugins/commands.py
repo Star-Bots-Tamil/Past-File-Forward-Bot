@@ -85,7 +85,7 @@ async def forward(bot, message):
             await bot.copy_message(
                 chat_id=TO,
                 from_chat_id=FROM,
-                parse_mode=enums.ParseMode.HTML,       
+                parse_mode=enums.ParseMode.MARKDOWN,       
                 caption=Translation.CAPTION.format(file_name),
                 message_id=message.id
             )
@@ -96,7 +96,7 @@ async def forward(bot, message):
             await bot.copy_message(
                 chat_id=TO,
                 from_chat_id=FROM,
-                parse_mode=enums.ParseMode.HTML,       
+                parse_mode=enums.ParseMode.MARKDOWN,       
                 caption=Translation.CAPTION.format(file_name),
                 message_id=message.id
             )
