@@ -11,6 +11,7 @@ FILTER = Config.FILTER_TYPE
 
 @Client.on_message(filters.private & filters.command(["forward"]))
 async def run(bot, message):
+    files_count = 0
     if str(message.from_user.id) not in Config.OWNER_ID:
         return
     buttons = [[
