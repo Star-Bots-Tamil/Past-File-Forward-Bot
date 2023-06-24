@@ -8,6 +8,7 @@ from translation import Translation
 FROM = Config.FROM_CHANNEL
 TO = Config.TO_CHANNEL
 FILTER = Config.FILTER_TYPE
+MIME_TYPES = Config.MIME_TYPES
 
 @Client.on_message(filters.private & filters.command(["forward"]))
 async def run(bot, message):
@@ -24,7 +25,7 @@ async def run(bot, message):
     )
 
     files_count = 0
-    async for message in bot.USER.search_messages(chat_id=FROM,offset=Config.SKIP_NO,limit=Config.LIMIT,filter=FILTER):
+    async for message in bot.USER.search_messages(chat_id=FROM,offset=Config.SKIP_NO,limit=Config.LIMIT,filter=FILTER,mime_types=MIME_TYPES):
         try:
             if message.video:
                 file_name = message.video.file_name
