@@ -1,15 +1,9 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) TRTECHGUIDE
-
 from pyrogram import Client, __version__
-
+from pyrogram.enums import ParseMode
 from config import Config
 from config import LOGGER
 
 from user import User
-
-
 
 class Bot(Client):
     USER: User = None
@@ -31,12 +25,12 @@ class Bot(Client):
     async def start(self):
         await super().start()
         usr_bot_me = await self.get_me()
-        self.set_parse_mode("enums.ParseMode.HTML")
+        self.set_parse_mode(ParseMode.HTML)
         self.LOGGER(__name__).info(
-            f"@{usr_bot_me.username}  started! "
+            f"@{usr_bot_me.username} Started!"
         )
         self.USER, self.USER_ID = await User().start()
 
     async def stop(self, *args):
         await super().stop()
-        self.LOGGER(__name__).info("Bot stopped. Bye.")
+        self.LOGGER(__name__).info("Bot Stopped. Bye.")
