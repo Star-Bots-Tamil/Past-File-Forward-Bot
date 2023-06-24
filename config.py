@@ -13,7 +13,7 @@ class Config:
     BOT_SESSION = os.environ.get("BOT_SESSION", "past-file-forward-bot")
     USER_SESSION = os.environ.get("USER_SESSION", "past-file-forward-user")
     FROM_CHANNEL = os.environ.get("FROM_CHANNEL", "")
-    FILTER_TYPE = os.environ.get("FILTER_TYPE", "document")
+    FILTER_TYPE = os.environ.get("FILTER_TYPE", "document video").split()
     OWNER_ID = os.environ.get("OWNER_ID", "1391556668")
     LIMIT = int(os.environ.get("LIMIT", "1000000000000"))
     SKIP_NO = int(os.environ.get("SKIP_NO", "0"))
