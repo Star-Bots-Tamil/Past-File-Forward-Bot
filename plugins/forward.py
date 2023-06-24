@@ -14,10 +14,7 @@ async def run(bot, message):
     if str(message.from_user.id) not in Config.OWNER_ID:
         return
         files_count += 1
-        await asyncio.sleep(1)
-    except Exception as e:
-        print(e)
-        pass        
+        await asyncio.sleep(1)        
     buttons = [[
         InlineKeyboardButton('🚫 Stop', callback_data='stop_btn')
     ]]
