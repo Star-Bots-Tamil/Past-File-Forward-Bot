@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) TRTECHGUIDE
-
 import os
 import logging
 
@@ -17,7 +13,6 @@ class Config:
     OWNER_ID = os.environ.get("OWNER_ID", "1391556668")
     LIMIT = int(os.environ.get("LIMIT", "1000000000000"))
     SKIP_NO = int(os.environ.get("SKIP_NO", "0"))
-    MIME_TYPES = os.environ.get("MIME_TYPES", "video/x-matroska video/x-msvideo video/mp4").split()
     SESSION = os.environ.get("SESSION", "+919095030397")
     TO_CHANNEL = int(os.environ.get("TO_CHANNEL", "-1001849017994"))
 def LOGGER(name: str) -> logging.Logger:
