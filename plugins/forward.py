@@ -1,5 +1,5 @@
 import asyncio
-from pyrogram import Client, filters, enums
+from pyrogram import Client, filters, enums, mime_types
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors import FloodWait
 from config import Config
