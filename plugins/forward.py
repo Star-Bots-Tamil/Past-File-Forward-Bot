@@ -12,14 +12,18 @@ FILTER = Config.FILTER_TYPE
 @Client.on_message(filters.private & filters.command(["forward"]))
 async def run(bot, message):
     if str(message.from_user.id) not in Config.OWNER_ID:
-        return 
+        return
+        files_count += 1
+        await asyncio.sleep(1)
+    except Exception as e:
+        print(e)
+        pass        
     buttons = [[
         InlineKeyboardButton('🚫 Stop', callback_data='stop_btn')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     m = await bot.send_message(
         text="<b>File Forwording Started😉\nForwarded Files :- <code>{files_count}</code> Files</b>",
-        files_count = 0
         reply_markup=reply_markup,
         chat_id=message.chat.id
     )
