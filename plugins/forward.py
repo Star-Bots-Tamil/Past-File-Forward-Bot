@@ -11,20 +11,19 @@ FILTER = Config.FILTER_TYPE
 
 @Client.on_message(filters.private & filters.command(["forward"]))
 async def run(bot, message):
-    files_count = 0
     if str(message.from_user.id) not in Config.OWNER_ID:
-        return
+        return 
     buttons = [[
         InlineKeyboardButton('🚫 Stop', callback_data='stop_btn')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     m = await bot.send_message(
         text="<b>File Forwording Started😉\nForwarded Files :- <code>{files_count}</code> Files</b>",
+        files_count = 0
         reply_markup=reply_markup,
         chat_id=message.chat.id
     )
 
-    files_count = 0
     async for message in bot.USER.search_messages(chat_id=FROM,offset=Config.SKIP_NO,limit=Config.LIMIT,filter=FILTER):
         try:
             if message.video:
