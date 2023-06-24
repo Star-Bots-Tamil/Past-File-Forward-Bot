@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) TRTECHGUIDE
-
 import os
 import sys
 import asyncio
@@ -10,6 +6,7 @@ from pyrogram.types import CallbackQuery
 
 @Client.on_callback_query(filters.regex(r'^stop_btn$'))
 async def stop_button(c: Client, cb: CallbackQuery):
+    files_count = 0
     await cb.message.delete()
     await cb.answer()
     msg = await c.send_message(
