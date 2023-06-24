@@ -18,7 +18,7 @@ async def run(bot, message):
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     m = await bot.send_message(
-        text="<i>File Forwording Started😉</i>",
+        text="<b>File Forwording Started😉</b>",
         reply_markup=reply_markup,
         chat_id=message.chat.id
     )
@@ -63,7 +63,7 @@ async def run(bot, message):
     ]] 
     reply_markup = InlineKeyboardMarkup(buttons)
     await m.edit(
-        text=f"<u><i>Successfully Forwarded</i></u>\n\n<b>Total Forwarded Files:-</b> <code>{files_count}</code> <b>Files</b>\n<b>Thanks For Using Me❤️</b>",
+        text=f"<u><b>Successfully Forwarded</b></u>\n\n<b>Total Forwarded Files :-</b> <code>{files_count}</code> <b>Files</b>\n<b>Thanks For Using Me❤️</b>",
         reply_markup=reply_markup
     )
         
