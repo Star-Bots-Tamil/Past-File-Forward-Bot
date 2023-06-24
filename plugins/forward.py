@@ -1,5 +1,5 @@
 import asyncio
-from pyrogram import Client, filters, enums, mime_types
+from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors import FloodWait
 from config import Config
@@ -8,24 +8,23 @@ from translation import Translation
 FROM = Config.FROM_CHANNEL
 TO = Config.TO_CHANNEL
 FILTER = Config.FILTER_TYPE
-MIME_TYPES = Config.MIME_TYPES
 
 @Client.on_message(filters.private & filters.command(["forward"]))
 async def run(bot, message):
     if str(message.from_user.id) not in Config.OWNER_ID:
         return
     buttons = [[
-        InlineKeyboardButton('🚫 STOP', callback_data='stop_btn')
+        InlineKeyboardButton('🚫 Stop', callback_data='stop_btn')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     m = await bot.send_message(
-        text="<b>File Forwording Started😉</b>",
+        text="<b>File Forwording Started😉\nForwarded Files :- <code>{files_count}</code> Files</b>",
         reply_markup=reply_markup,
         chat_id=message.chat.id
     )
 
     files_count = 0
-    async for message in bot.USER.search_messages(chat_id=FROM,offset=Config.SKIP_NO,limit=Config.LIMIT,filter=FILTER,mime_types=MIME_TYPES):
+    async for message in bot.USER.search_messages(chat_id=FROM,offset=Config.SKIP_NO,limit=Config.LIMIT,filter=FILTER):
         try:
             if message.video:
                 file_name = message.video.file_name
